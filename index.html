@@ -117,7 +117,9 @@
         }
 
         @media (max-width: 900px) {
-            .hero { grid-template-columns: 1fr; text-align: center; padding: 2rem 0; }
+            .hero { grid-template-columns: 1fr; text-align: center; padding: 2rem 0; overflow: hidden; }
+            .hero-content p { margin-left: auto; margin-right: auto; }
+            .ui-mockup { max-width: 100%; margin: 2rem auto; }
         }
 
         .hero-content h1 {
@@ -214,6 +216,10 @@
             gap: 1.5rem;
             margin: 2.5rem 0;
             text-align: left;
+        }
+        @media (max-width: 600px) {
+            .calc-grid { grid-template-columns: 1fr; }
+            .input-group { grid-column: span 1 !important; }
         }
         .input-group { display: flex; flex-direction: column; gap: 0.5rem; }
         .input-group label { font-size: 0.9rem; opacity: 0.7; }
@@ -357,12 +363,21 @@
                     </div>
                 </div>
                 
-                <button onclick="calculate()" class="btn btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">Calculate My Age</button>
-
+                <button onclick="calculate()" class="btn btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">Calculate My Freedom Age</button>
+                
                 <div id="result" class="calc-result">
                     <div style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 0.5rem;">Estimated Freedom Age</div>
                     <div style="font-size: 4rem; font-family: 'Outfit'; font-weight: 700;" id="result-age">--</div>
-                    <p style="margin-top: 1.5rem; font-size: 0.9rem;">To include your specific pensions, taxes, and debts for a 100% precise date, download the full app.</p>
+                    
+                    <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: left; font-size: 0.85rem; opacity: 0.7;">
+                        <p style="font-weight: 600; margin-bottom: 0.5rem; color: white;">The Math Behind the Number:</p>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 4px;">
+                            <li>• Assumed annual expenses: €30,000</li>
+                            <li>• Target: 25x expenses (€750,000)</li>
+                            <li>• Growth: 5.5% (adjusted for inflation)</li>
+                        </ul>
+                        <p style="margin-top: 1rem;">To use your specific tax rates and custom spending targets, download the full app.</p>
+                    </div>
                 </div>
             </div>
         </div>
